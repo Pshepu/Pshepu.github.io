@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paolo Sepúlveda — Desarrollador Full Stack</title>
+<meta name="description" content="Portafolio de Paolo Alejandro Sepúlveda Parraguez, desarrollador full stack egresando de Ingeniería en Informática (UTEM).">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <div class="brand">
+      <span class="dot"></span>
+      <span>Paolo Sepúlveda</span>
+    </div>
+    <button class="theme-btn" id="themeToggle" type="button">Cambiar a modo oscuro</button>
+  </header>
+
+  <main class="bento">
+
+    <section class="card hero">
+      <span class="badge">Buscando primer empleo</span>
+      <h1>Desarrollador full stack egresando de Ingeniería en Informática.</h1>
+      <p>
+        Práctica profesional en la Contraloría General de la República (Java/Spring Boot +
+        Angular). Estos son proyectos propios, de punta a punta: diseño, backend, frontend y
+        despliegue.
+      </p>
+      <div class="cta-row">
+        <a class="btn-primary" href="CV_Paolo_Sepulveda.pdf" target="_blank" rel="noopener">Ver CV</a>
+        <a class="btn-secondary" href="mailto:paoloAsepulveda@gmail.com">Contactar</a>
+        <a class="btn-secondary" href="https://github.com/Pshepu" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn-secondary" href="https://linkedin.com/in/paolo-alejandro-sepúlveda-parraguez-179475326" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </section>
+
+    <aside class="card profile">
+      <div class="avatar">PS</div>
+      <div>
+        <h2>Paolo Sepúlveda</h2>
+        <p class="role-line">Full Stack · Java/Spring · Vue/FastAPI</p>
+      </div>
+      <div class="stats">
+        <div class="stat-box">
+          <strong>4</strong>
+          <span>Proyectos propios</span>
+        </div>
+        <div class="stat-box">
+          <strong>UTEM</strong>
+          <span>Egreso 2026/2027</span>
+        </div>
+      </div>
+    </aside>
+
+    <section class="projects-head" style="grid-column: span 12;">
+      <h2>Proyectos</h2>
+    </section>
+
+    <!-- Forge-Dojo -->
+    <article class="card project">
+      <div class="thumb">captura próximamente</div>
+      <h3>Forge-Dojo</h3>
+      <p class="desc">
+        Plataforma personal de aprendizaje de programación con rutas guiadas por rol
+        (Web, Mobile, DevOps, Pentester, SOC Analyst, OSINT), estilo HackTheBox Academy.
+        Arquitectura en 3 capas (lenguajes / áreas / roles) para no duplicar contenido.
+      </p>
+      <p class="role-line"><strong>Mi rol:</strong> diseño y desarrollo en solitario.</p>
+      <div class="tags">
+        <span>Next.js 14</span><span>React</span><span>TypeScript</span>
+        <span>Tailwind</span><span>MDX</span><span>Sandpack</span>
+      </div>
+      <div class="links">
+        <a href="https://github.com/Pshepu/Forge-Dojo" target="_blank" rel="noopener">Código</a>
+        <a class="disabled" href="#">Demo (próximamente)</a>
+      </div>
+    </article>
+
+    <!-- AIP -->
+    <article class="card project">
+      <div class="thumb">captura próximamente</div>
+      <h3>AIP — Inventario Personal</h3>
+      <p class="desc">
+        PWA para llevar el inventario de un almacén o bazar desde el celular: escaneo de
+        productos por código de barras con la cámara, control de stock por mueble/repisa,
+        ventas y ganancias, respaldo a Excel. Funciona sin internet una vez instalada.
+      </p>
+      <p class="role-line"><strong>Mi rol:</strong> diseño y desarrollo en solitario, para uso real.</p>
+      <div class="tags">
+        <span>JavaScript</span><span>PWA</span><span>IndexedDB</span>
+        <span>Service Worker</span><span>SheetJS</span>
+      </div>
+      <div class="links">
+        <a href="https://github.com/Pshepu/AIP" target="_blank" rel="noopener">Código</a>
+        <a class="disabled" href="#">Demo (próximamente)</a>
+      </div>
+    </article>
+
+    <!-- Speech V2 -->
+    <article class="card project">
+      <div class="thumb">GIF próximamente</div>
+      <h3>Speech V2</h3>
+      <p class="desc">
+        Entrenador personal de idiomas (inglés, portugués, alemán, francés) con evaluación de
+        pronunciación por fonema (wav2vec2 + alineación forzada), misiones de inmersión
+        generadas con IA y repetición espaciada (FSRS). App local, pensada para correr en el
+        equipo propio.
+      </p>
+      <p class="role-line"><strong>Mi rol:</strong> diseño y desarrollo, con asistencia de IA.</p>
+      <div class="tags">
+        <span>FastAPI</span><span>Python</span><span>Vue 3</span>
+        <span>wav2vec2</span><span>Groq API</span>
+      </div>
+      <div class="links">
+        <a href="https://github.com/Pshepu/Speech-V2" target="_blank" rel="noopener">Código</a>
+        <a class="disabled" href="#">GIF demo (próximamente)</a>
+      </div>
+    </article>
+
+    <!-- Tesis -->
+    <article class="card project">
+      <div class="thumb"><img src="assets/tesis-validacion-calibracion.png" alt="Validación de calibración del simulador de mercado: retornos reales vs. simulados"></div>
+      <h3>Tesis: mitigación de slippage con agentes RL</h3>
+      <p class="desc">
+        Proyecto de título: sistema multiagente jerárquico (1 Agente Maestro + 3 Agentes
+        Ejecutores) entrenado con PPO sobre el simulador de mercado ABIDES, calibrado contra
+        datos reales del IPSA y validado con test de Kolmogorov-Smirnov. Sin demo interactiva:
+        se muestra con los resultados de calibración.
+      </p>
+      <p class="role-line"><strong>Mi rol:</strong> investigación y desarrollo; parte del código se construyó con asistencia de IA.</p>
+      <div class="tags">
+        <span>PyTorch</span><span>PPO</span><span>RL multi-agente</span><span>ABIDES-Gym</span>
+      </div>
+      <div class="links">
+        <a href="https://github.com/Vatelfil/slippage" target="_blank" rel="noopener">Repo</a>
+      </div>
+    </article>
+
+    <section class="card about">
+      <h2 style="font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 10px;">Sobre mí</h2>
+      <p>
+        Hice mi práctica profesional en la Contraloría General de la República (CGR), en el
+        equipo de desarrollo, con Java 21, Spring Boot, Angular y Oracle/PostgreSQL. Trabajo a
+        diario con IA como parte de mi flujo (Claude, ChatGPT) y lo digo con transparencia en
+        cada proyecto: los que son personales los hice con su asistencia.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 Paolo Sepúlveda · <a href="mailto:paoloAsepulveda@gmail.com">paoloAsepulveda@gmail.com</a>
+  </footer>
+</div>
+
+<script>
+  const html = document.documentElement;
+  const btn = document.getElementById("themeToggle");
+  const saved = (() => { try { return localStorage.getItem("theme"); } catch { return null; } })();
+  if (saved) {
+    html.setAttribute("data-theme", saved);
+    btn.textContent = saved === "dark" ? "Cambiar a modo claro" : "Cambiar a modo oscuro";
+  }
+  btn.addEventListener("click", () => {
+    const isDark = html.getAttribute("data-theme") === "dark";
+    const next = isDark ? "light" : "dark";
+    html.setAttribute("data-theme", next);
+    btn.textContent = isDark ? "Cambiar a modo oscuro" : "Cambiar a modo claro";
+    try { localStorage.setItem("theme", next); } catch {}
+  });
+</script>
+</body>
+</html>
