@@ -252,6 +252,75 @@ section.projects-head h2 {
   text-align: center;
   padding: 10px;
   overflow: hidden;
+  cursor: zoom-in;
+  position: relative;
+}
+
+.thumb.has-media::after {
+  content: "⤢ Ampliar";
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 9px;
+  border-radius: 999px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .15s ease;
+}
+
+.thumb.has-media:hover::after {
+  opacity: 1;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 7, 12, 0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  z-index: 1000;
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: min(1100px, 92vw);
+  max-height: 88vh;
+}
+
+.lightbox-content img,
+.lightbox-content video {
+  display: block;
+  max-width: min(1100px, 92vw);
+  max-height: 88vh;
+  width: auto;
+  height: auto;
+  border-radius: 12px;
+  background: var(--surface);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -42px;
+  right: 0;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
 }
 
 .thumb img,

@@ -60,7 +60,7 @@
 
     <!-- Forge-Dojo -->
     <article class="card project">
-      <div class="thumb"><video src="assets/forge-dojo-demo.mp4" autoplay loop muted playsinline></video></div>
+      <div class="thumb has-media"><video src="assets/forge-dojo-demo.mp4" autoplay loop muted playsinline></video></div>
       <h3>Forge-Dojo</h3>
       <p class="desc">
         Plataforma personal de aprendizaje de programación con rutas guiadas por rol
@@ -80,7 +80,7 @@
 
     <!-- AIP -->
     <article class="card project">
-      <div class="thumb"><video src="assets/aip-demo.mp4" autoplay loop muted playsinline></video></div>
+      <div class="thumb has-media"><video src="assets/aip-demo.mp4" autoplay loop muted playsinline></video></div>
       <h3>AIP — Inventario Personal</h3>
       <p class="desc">
         PWA para llevar el inventario de un almacén o bazar desde el celular: escaneo de
@@ -100,7 +100,7 @@
 
     <!-- Speech V2 -->
     <article class="card project">
-      <div class="thumb"><video src="assets/speech-v2-demo.mp4" autoplay loop muted playsinline></video></div>
+      <div class="thumb has-media"><video src="assets/speech-v2-demo.mp4" autoplay loop muted playsinline></video></div>
       <h3>Speech V2</h3>
       <p class="desc">
         Entrenador personal de idiomas (inglés, portugués, alemán, francés) con evaluación de
@@ -120,7 +120,7 @@
 
     <!-- Tesis -->
     <article class="card project">
-      <div class="thumb"><img src="assets/tesis-validacion-calibracion.png" alt="Validación de calibración del simulador de mercado: retornos reales vs. simulados"></div>
+      <div class="thumb has-media"><img src="assets/tesis-validacion-calibracion.png" alt="Validación de calibración del simulador de mercado: retornos reales vs. simulados"></div>
       <h3>Tesis: mitigación de slippage con agentes RL</h3>
       <p class="desc">
         Proyecto de título: sistema multiagente jerárquico (1 Agente Maestro + 3 Agentes
@@ -154,6 +154,12 @@
   </footer>
 </div>
 
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-content" id="lightboxContent">
+    <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Cerrar">✕</button>
+  </div>
+</div>
+
 <script>
   const html = document.documentElement;
   const btn = document.getElementById("themeToggle");
@@ -168,6 +174,45 @@
     html.setAttribute("data-theme", next);
     btn.textContent = isDark ? "Cambiar a modo oscuro" : "Cambiar a modo claro";
     try { localStorage.setItem("theme", next); } catch {}
+  });
+
+  const lightbox = document.getElementById("lightbox");
+  const lightboxContent = document.getElementById("lightboxContent");
+  const lightboxClose = document.getElementById("lightboxClose");
+
+  function openLightbox(sourceEl) {
+    const existing = lightboxContent.querySelector("img, video");
+    if (existing) existing.remove();
+    const clone = sourceEl.cloneNode(true);
+    clone.removeAttribute("width");
+    clone.removeAttribute("height");
+    if (clone.tagName === "VIDEO") {
+      clone.controls = true;
+      clone.muted = false;
+    }
+    lightboxContent.appendChild(clone);
+    lightbox.classList.add("open");
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove("open");
+    const media = lightboxContent.querySelector("img, video");
+    if (media && media.tagName === "VIDEO") media.pause();
+  }
+
+  document.querySelectorAll(".thumb.has-media").forEach((thumb) => {
+    thumb.addEventListener("click", () => {
+      const media = thumb.querySelector("img, video");
+      if (media) openLightbox(media);
+    });
+  });
+
+  lightboxClose.addEventListener("click", closeLightbox);
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeLightbox();
   });
 </script>
 </body>
