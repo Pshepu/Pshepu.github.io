@@ -30,7 +30,7 @@
       </p>
       <div class="cta-row">
         <a class="btn-primary" href="CV_Paolo_Sepulveda.pdf" target="_blank" rel="noopener">Ver CV</a>
-        <a class="btn-secondary" href="mailto:paoloAsepulveda@gmail.com">Contactar</a>
+        <a class="btn-secondary" href="#" id="contactLink" data-email="cGFvbG9Bc2VwdWx2ZWRhQGdtYWlsLmNvbQ==">Contactar</a>
         <a class="btn-secondary" href="https://github.com/Pshepu" target="_blank" rel="noopener">GitHub</a>
         <a class="btn-secondary" href="https://linkedin.com/in/paolo-alejandro-sepúlveda-parraguez-179475326" target="_blank" rel="noopener">LinkedIn</a>
       </div>
@@ -150,7 +150,7 @@
   </main>
 
   <footer>
-    © 2026 Paolo Sepúlveda · <a href="mailto:paoloAsepulveda@gmail.com">paoloAsepulveda@gmail.com</a>
+    © 2026 Paolo Sepúlveda · <a href="#" class="footer-email" data-email="cGFvbG9Bc2VwdWx2ZWRhQGdtYWlsLmNvbQ==">(mostrar correo)</a>
   </footer>
 </div>
 
@@ -213,6 +213,27 @@
   });
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeLightbox();
+  });
+
+  function decodeEmail(el) {
+    try { return atob(el.dataset.email); } catch { return ""; }
+  }
+
+  const contactLink = document.getElementById("contactLink");
+  if (contactLink) {
+    contactLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.location.href = "mailto:" + decodeEmail(contactLink);
+    });
+  }
+
+  document.querySelectorAll(".footer-email").forEach((el) => {
+    el.addEventListener("click", (e) => {
+      e.preventDefault();
+      const email = decodeEmail(el);
+      el.textContent = email;
+      window.location.href = "mailto:" + email;
+    });
   });
 </script>
 </body>
